@@ -80,11 +80,16 @@ def play():
 
     # Prepare plot
     img = io.BytesIO()
-    sns.set_style("dark")
-    sns.catplot(x="Bar", y="Level",
+    pal = sns.color_palette("Set2")
+    plot = sns.catplot(x="Bar", y="Level",
                 data=bars_df, saturation=.5,
-                kind="bar", ci=None, aspect=1.5)
-    plt.savefig(img, format='png')
+                kind="bar", ci=None, aspect=1.5, palette=pal)
+    for axes in plot.axes.flat:
+        _ = axes.set_xticklabels(axes.get_xticklabels(), rotation=90)
+    plt.xlabel('Bar', fontsize=15)
+    plt.ylabel('Level', fontsize=15)
+    plt.tight_layout()
+    plt.savefig(img, format='png', transparent=True)
     plt.close()
     img.seek(0)
     plot_url = base64.b64encode(img.getvalue()).decode()

@@ -92,7 +92,7 @@ def play():
     game_over = current_question == len(questions)
     if game_over:
         session.pop('username', None)
-        return render_template('game_over.html', message="Game over", plot_url=plot_url)
+        return render_template('game_over.html', message=message, plot_url=plot_url)
 
     question = questions[current_question][0]
     number_of_choices = questions[current_question][1][0]

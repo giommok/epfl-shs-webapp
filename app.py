@@ -53,12 +53,14 @@ def login():
 
 @app.route('/play', methods=['GET', 'POST'])
 def play():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+
     quiz_form = QuizForm()
     current_question = session['question_number']
     bars_df = pd.read_json(session['bars_df'], orient='split')
 
-    # Retrieve feedback for last choice
-    message = "" if current_question == 0 or current_question == len(questions) else questions[current_question][1][3][int(quiz_form.question.data)]
+    message = ""
 
     if request.method == 'POST':
         # Retrieve choice
@@ -68,6 +70,9 @@ def play():
         rewards = pd.Series(questions[current_question][1][1][choice], dtype=int)
         bars_df['Level'] = bars_df['Level'].add(rewards)
         session['bars_df'] = bars_df.copy(deep=True).to_json(orient='split')
+
+        # Retrieve feedback for last choice
+        message = questions[current_question][1][3][int(quiz_form.question.data)]
 
         # Update question number
         session['question_number'] += 1

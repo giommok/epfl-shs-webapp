@@ -113,7 +113,7 @@ def create_plot(old_bars, updated_bars):
         pal = dict(zip(unique, sns.color_palette(n_colors=len(unique))))
         pal.update({"Total": "k"})
 
-        plot = sns.catplot(x="Bar", y="Level", col="Bar type", hue="Time",
+        plot = sns.catplot(x="Bar", y="Level", col="Bar type", hue="Time", hue_order=["Old bars", "Current bars"],
                    data=temp, alpha=0.7, edgecolor="white",
                    kind="bar", ci=None, palette=pal, sharex=False, sharey=False, dodge=True)
         sns.move_legend(plot, "upper center", bbox_to_anchor=(0.5, 1.1), ncol=2, title=None, frameon=False)

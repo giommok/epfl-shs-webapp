@@ -1,5 +1,6 @@
-{"Product quality": 90,
-"Social impact": 40,
-"Greenhouse emission": 50,
-"Pollution": 70,
-"Resources usage": 30}
+{"Budget": [50, "Product"],
+"Product quality": [90, "Product"],
+"Social impact": [40, "Ethical"],
+"Greenhouse emission": [50, "Ethical"],
+"Pollution": [70, "Ethical"],
+"Resources usage": [30, "Ethical"]}

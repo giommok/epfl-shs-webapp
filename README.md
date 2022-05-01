@@ -1,1 +1,1 @@
-# epfl_shs_webapp
+# Project for "How people learn" course at EPFL

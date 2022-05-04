@@ -46,6 +46,7 @@ google-crc32c @ file:///C:/ci/google-crc32c_1613236256627/work
 google-resumable-media @ file:///tmp/build/80754af9/google-resumable-media_1624367812531/work
 googleapis-common-protos @ file:///C:/ci/googleapis-common-protos-feedstock_1617957828677/work
 grpcio @ file:///C:/ci/grpcio_1637590968244/work
+gunicorn==20.1.0
 idna @ file:///tmp/build/80754af9/idna_1637925883363/work
 importlib-metadata @ file:///C:/ci/importlib-metadata_1638543108096/work
 ipykernel @ file:///C:/ci/ipykernel_1633545574250/work/dist/ipykernel-6.4.1-py3-none-any.whl

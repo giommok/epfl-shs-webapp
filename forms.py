@@ -12,7 +12,7 @@ class FieldsRequiredForm(FlaskForm):
             return super().render_field(field, render_kw)
 
 class QuizForm(FieldsRequiredForm):
-    question = RadioField('choice', [validators.Required()])
+    question = RadioField('choice', [validators.DataRequired()])
     submit = SubmitField('Submit')
 
 

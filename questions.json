@@ -1,39 +1,49 @@
 [
     [
         "<p>Nowadays, when a phone is broken it is completely replaced by the company. This way, you give the user a new fully functioning phone, so the company does not need to repair the phone and the user will cover the expensive cost of replacing the broken phone. Your company takes the smartphones and gives you another working device.</p>\n\n    <p>You have thought of possible ways to manage this issue:\n    <ol>\n      <li>Design the device in a way so that the user can open and repair it by themselves.</li>\n      <li>The client can send their old phones for free, to be recycled or to have a second life.</li>\n      <li>The client can send the broken phone to the company and get a new one for free. The company does not have to recycle the broken phone and just throw it away in the landfill.</li>\n      <li>Ignore the issue.</li>\n    </ol>\n    </p>\n    \n    <p>What do you do?</p>\n    \n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>1 and 2</li>\n             <li>1 and 3</li>\n             <li>4</li>\n    </ol>",
-        4,
+        6,
         [
             [
                 20,
                 10,
                 50,
                 90,
-                13,
-                14
+                13
             ],
             [
                 -31,
                 -51,
                 -81,
                 -1,
-                -25,
-                -13
+                -25
             ],
             [
                 20,
                 10,
                 50,
                 90,
-                13,
-                14
+                13
             ],
             [
                 -31,
                 -51,
                 -81,
                 -1,
-                -25,
-                -13
+                -25
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                -31,
+                -51,
+                -81,
+                -1,
+                -25
             ]
         ],
         "Extraction",
@@ -46,39 +56,21 @@
     ],
     [
         "<p>Today, the plastics you use for the production are made by “The Plastic Corporation”. They make a good quality product for a relatively low cost, but their plastic is made from hydrocarbons and is not easily recyclable.</p>\n    \n    <p>You have to manage how you want to get the plastics for the phones and there are a few options:\n    <ol>\n      <li>Keep you old company.</li>\n      <li>Change for “Green Plastic”, a company with similar quality but that makes plant-based plastic that can be easily recyclable.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n    </ol>",
-        4,
+        2,
         [
             [
                 20,
                 10,
                 50,
                 90,
-                13,
-                14
+                13
             ],
             [
                 -31,
                 -51,
                 -81,
                 -1,
-                -25,
-                -13
-            ],
-            [
-                20,
-                10,
-                50,
-                90,
-                13,
-                14
-            ],
-            [
-                -31,
-                -51,
-                -81,
-                -1,
-                -25,
-                -13
+                -25
             ]
         ],
         "Extraction",

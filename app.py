@@ -73,6 +73,7 @@ def play():
         bars_df['Level'] = bars_df['Level'].add(rewards)
         session['bars_df'] = bars_df.copy(deep=True).to_json(orient='split')
 
+
         # Retrieve feedback for last choice
         message = questions[current_question][4][int(quiz_form.question.data)]
 
@@ -83,9 +84,15 @@ def play():
     plot_url = create_plot(old_bars_df, bars_df)
 
     game_over = current_question == len(questions)
+
     if game_over:
+        if game_lost(bars_df):
+            message = "You lost the game :( !"
+        else:
+            message = "Congrats, you won the game!"
         session.pop('username', None)
         return render_template('game_over.html', message=message, plot_url=plot_url)
+
     question = questions[current_question][0]
     number_of_choices = questions[current_question][1]
     topic = questions[current_question][3]
@@ -135,6 +142,13 @@ def create_plot(old_bars, updated_bars):
     img.seek(0)
     plot_url = base64.b64encode(img.getvalue()).decode()
     return plot_url
+
+def game_lost(df):
+    sustainability_df = df[df['Bar type'] == 'Sustainability']
+    product_df = df[df['Bar type'] == 'Product']
+
+    return (sustainability_df['Level'] > 100).any() or (product_df['Level'] < 100).any()
+
 
 if __name__ == "__main__":
     app.run('localhost', 5000, debug=True)

@@ -151,4 +151,4 @@ def game_lost(df):
 
 
 if __name__ == "__main__":
-    app.run('localhost', 5000, debug=True)
+    app.run(debug=True)

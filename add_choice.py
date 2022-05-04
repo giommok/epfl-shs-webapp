@@ -31,12 +31,12 @@ with open('questions.json', encoding="utf8") as f:
 
 with open('questions.json', 'w', encoding='utf-8') as f:
 
-    question = """<p>A local representative just started suing your company because the smartphone produced contains a high amount of toxic metals (Nickel for casing and electronics, Antimony for the chip…). Those need to be recycled in high performing facilities and in developing countries they get dispersed in nature where they intoxicate animals and can cause cancer for those exposed to it.</p>
+    question = """<p>Newer smartphones integrate increasingly rarer materials that are very difficult to extract and cannot yet be recycled, they allow to push the limits of performances and miniaturisation. To keep your company’s smartphones interesting, what do you do?</p>
     <p>You have various options:
     <ol>
-      <li>Hire good layers to win the trial and keep doing so.</li>
-      <li>Invest in R&D to more efficient ways to recycle those metals.</li>
-      <li>Recognize your errors and try to help building more performant facilities in those developing countries.</li>
+      <li>Use those newer materials to keep on track with your competitors.</li>
+      <li>Invest in R&D for higher performance with known materials.</li>
+      <li>Let your competitors push on performance but optimise the interface.</li>
     </ol>
     </p>
 

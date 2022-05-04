@@ -22,7 +22,7 @@ Escape Game
 
       <h1 class="pt-5 pb-2">Topic: {{ topic }}</h1>
 
-      <p class="lead"> {{ question }}</p>
+      <p class="lead"> {{ question|safe }}</p>
 
       <div style="text-align: center;">{{ wtf.quick_form(quiz_form) }}</div>
 

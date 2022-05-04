@@ -18,12 +18,9 @@ Bootstrap(app)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 # Open questions file
-with open('choices.db') as f:
-    data = json.load(f)
+with open('questions.json', encoding="utf8") as f:
+    questions = json.load(f)
     f.close()
-
-# Create list of questions (question, number of answers, changes of bars per answer, topic, feedback per answer)
-questions = [(d, (data[d][0], data[d][1], data[d][2], data[d][3])) for d in data]
 
 # Open bars file
 with open('bars.db') as f:
@@ -72,12 +69,12 @@ def play():
         # Update bars
         session['old_bars_df'] = bars_df.copy(deep=True).to_json(orient='split')
         old_bars_df = bars_df.copy(deep=True)
-        rewards = pd.Series(questions[current_question][1][1][choice], dtype=int)
+        rewards = pd.Series(questions[current_question][2][choice], dtype=int)
         bars_df['Level'] = bars_df['Level'].add(rewards)
         session['bars_df'] = bars_df.copy(deep=True).to_json(orient='split')
 
         # Retrieve feedback for last choice
-        message = questions[current_question][1][3][int(quiz_form.question.data)]
+        message = questions[current_question][4][int(quiz_form.question.data)]
 
         # Update question number
         session['question_number'] += 1
@@ -89,10 +86,9 @@ def play():
     if game_over:
         session.pop('username', None)
         return render_template('game_over.html', message=message, plot_url=plot_url)
-
     question = questions[current_question][0]
-    number_of_choices = questions[current_question][1][0]
-    topic = questions[current_question][1][2]
+    number_of_choices = questions[current_question][1]
+    topic = questions[current_question][3]
     quiz_form.question.choices = [(i, string.ascii_uppercase[i]) for i in range(number_of_choices)]
 
     return render_template('play.html', quiz_form=quiz_form, message=message, question=question, topic=topic,

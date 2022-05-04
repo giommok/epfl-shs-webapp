@@ -123,6 +123,7 @@ def create_plot(old_bars, updated_bars):
     for axes in plot.axes.flat:
         axes.set_xlabel('')
         axes.set_ylabel('')
+        axes.set_ylim(top=230)
         _ = axes.set_xticklabels(axes.get_xticklabels(), rotation=30, horizontalalignment='right')
         trans = mtrans.Affine2D().translate(-0, 0)
         for t in axes.get_xticklabels():

@@ -46,12 +46,14 @@
                 -25
             ]
         ],
-        "Extraction",
+        "Recycling",
         [
             "FB1",
             "FB2",
             "FB3",
-            "FB4"
+            "FB4",
+            "FB5",
+            "FB6"
         ]
     ],
     [
@@ -73,12 +75,258 @@
                 -25
             ]
         ],
-        "Extraction",
+        "Recycling",
         [
             "FB1",
             "FB2",
             "FB3",
             "FB4"
+        ]
+    ],
+    [
+        "<p>There is a scientific breakthrough in battery technology which renders these new batteries much more efficient with longer lifetime, but uses materials that are impossible to recycle at the current state of the technology.</p>\n    <p>All of your competitors already switched to this new battery type.</p>\n    <p>You have thought of possible ways to manage this issue:\n    <ol>\n      <li>You follow your competitors and use this new type of battery.</li>\n      <li>You invest massively in R&D to search for battery technology that will allow it to be recyclable in the future.</li>\n      <li>You discard this technology and keep what you are using right now.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>1 and 2</li>\n             <li>2 and 3</li>\n    </ol>",
+        5,
+        [
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ]
+        ],
+        "Recycling",
+        [
+            "FB",
+            "FB",
+            "FB",
+            "FB",
+            "FB"
+        ]
+    ],
+    [
+        "<p>Your competitors are designing new phones that are more powerful than your current model. Those phones require a lot of resources.</p>\n    <p>You have different options:\n    <ol>\n      <li>Increase the power of your smartphone by scaling up the number of components you use now (and so, increase the mines usage).</li>\n      <li>Increase the power of your smartphone by investing in research and using more advanced and powerful components while still using the same amount of raw materials.</li>\n      <li>Use less transistors to have lower power but longer battery.</li>\n      <li>Ignore the issue.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>4</li>\n    </ol>",
+        4,
+        [
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ]
+        ],
+        "Mining",
+        [
+            "FB",
+            "FB",
+            "FB",
+            "FB"
+        ]
+    ],
+    [
+        "<p>For the extraction of the metals in your smartphones you are currently working with a company called: “The mining corporation”. However, in recent years you’ve heard about  another mining company called “The Miners”.</p>\n    <p>You have two options:\n    <ol>\n      <li>Keep buying resources from “The mining corporation”.</li>\n      <li>Change the reseller and buy resources from “The Miners”.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n    </ol>",
+        2,
+        [
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ]
+        ],
+        "Mining",
+        [
+            "FB",
+            "FB"
+        ]
+    ],
+    [
+        "<p>The company has to split the budget of R&D to reduce the CO2 impact of the phone from mining to end of life management.</p>\n    <p>You have various option on how to split the budget for the different phases of the phone life:\n    <ol>\n      <li>70% on extraction and manufacturing, 7% on transportation, 20% on usage and 3% on end of life.</li>\n      <li>30% on extraction and manufacturing, 8% on transportation, 50% on usage and 2% on end of life.</li>\n      <li>40% on extraction and manufacturing, 10% on transportation, 40% on usage and 10% on end of life.</li>\n      <li>25% on extraction and manufacturing,10% on transportation,  25% on usage and 40% on end of life.</li>\n      <li>10% on extraction and manufacturing, 5% on transportation, 60% on usage and 25% on end of life.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>4</li>\n             <li>5</li>\n    </ol>",
+        5,
+        [
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ]
+        ],
+        "Pollution",
+        [
+            "FB",
+            "FB",
+            "FB",
+            "FB",
+            "FB"
+        ]
+    ],
+    [
+        "<p>As you just have seen the extraction and manufacturing is responsible for the biggest impact on the environment. Your company ask again to split the budget you assigned for the R&D for the extraction and manufacturing to the different component of the smartphone.</p>\n    <p>You have various options:\n    <ol>\n      <li>10 % Integrated circuit (IC), 50% Battery, 30% Display, 10% Printed circuits (PCB).</li>\n      <li>5 % Integrated circuit (IC), 5% Battery, 80% Display, 10% Printed circuits (PCB).</li>\n      <li>5 % Integrated circuit (IC), 70% Battery, 20% Display, 5% Printed circuits (PCB).</li>\n      <li>80% Integrated circuit (IC), 5% Battery, 10% Display, 5% Printed circuits (PCB).</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>4</li>\n    </ol>",
+        4,
+        [
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ]
+        ],
+        "Pollution",
+        [
+            "FB",
+            "FB",
+            "FB",
+            "FB"
+        ]
+    ],
+    [
+        "<p>A local representative just started suing your company because the smartphone produced contains a high amount of toxic metals (Nickel for casing and electronics, Antimony for the chip…). Those need to be recycled in high performing facilities and in developing countries they get dispersed in nature where they intoxicate animals and can cause cancer for those exposed to it.</p>\n    <p>You have various options:\n    <ol>\n      <li>Hire good layers to win the trial and keep doing so.</li>\n      <li>Invest in R&D to more efficient ways to recycle those metals.</li>\n      <li>Recognize your errors and try to help building more performant facilities in those developing countries.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>2 and 3</li>\n    </ol>",
+        4,
+        [
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ],
+            [
+                20,
+                10,
+                50,
+                90,
+                13
+            ]
+        ],
+        "Pollution",
+        [
+            "FB",
+            "FB",
+            "FB",
+            "FB"
         ]
     ]
 ]

@@ -10,4 +10,6 @@ matplotlib
 pandas
 seaborn
 
+werkzeug==0.16.1
+
 uwsgi

@@ -128,7 +128,7 @@ def create_plot(old_bars, updated_bars):
 
     else:
         plot = sns.catplot(x="Bar", y="Level", #col="Bar type",
-                           data=bars_df, saturation=.5,
+                           data=updated_bars, saturation=.5,
                            kind="bar", ci=None, sharex=False, sharey=False)
     plot.axes[0][0].axhline(100, color='red', ls='--')
     #plot.axes[0][1].axhline(100, color='red', ls='--')

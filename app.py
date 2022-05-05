@@ -82,6 +82,7 @@ def play():
         current_question += 1
 
     plot_url = create_plot(old_bars_df, bars_df)
+    money = get_money(bars_df)
 
     game_over = current_question == len(questions)
 
@@ -91,7 +92,7 @@ def play():
         else:
             message = "Congrats, you won the game!"
         session.pop('username', None)
-        return render_template('game_over.html', message=message, plot_url=plot_url)
+        return render_template('game_over.html', message=message, plot_url=plot_url, money=money)
 
     question = questions[current_question][0]
     number_of_choices = questions[current_question][1]
@@ -99,13 +100,17 @@ def play():
     quiz_form.question.choices = [(i, string.ascii_uppercase[i]) for i in range(number_of_choices)]
 
     return render_template('play.html', quiz_form=quiz_form, message=message, question=question, topic=topic,
-                           plot_url=plot_url)
+                           plot_url=plot_url, money=money)
 
 def create_plot(old_bars, updated_bars):
     # Prepare plot
     img = io.BytesIO()
+    # Excluding budget
+    updated_bars = updated_bars[updated_bars['Bar'] != 'Budget']
 
     if old_bars is not None:
+        # Excluding budget
+        old_bars = old_bars[old_bars['Bar'] != 'Budget']
         temp_updated = updated_bars.copy()
         temp_old = old_bars.copy()
         temp_updated['Time'] = "Current bars"
@@ -116,17 +121,17 @@ def create_plot(old_bars, updated_bars):
         pal = dict(zip(unique, sns.color_palette(n_colors=len(unique))))
         pal.update({"Total": "k"})
 
-        plot = sns.catplot(x="Bar", y="Level", col="Bar type", hue="Time", hue_order=["Old bars", "Current bars"],
+        plot = sns.catplot(x="Bar", y="Level", hue="Time", hue_order=["Old bars", "Current bars"], #col="Bar type",
                    data=temp, alpha=0.7, edgecolor="white",
                    kind="bar", ci=None, palette=pal, sharex=False, sharey=False, dodge=True)
         sns.move_legend(plot, "upper center", bbox_to_anchor=(0.5, 1.1), ncol=2, title=None, frameon=False)
 
     else:
-        plot = sns.catplot(x="Bar", y="Level", col="Bar type",
+        plot = sns.catplot(x="Bar", y="Level", #col="Bar type",
                            data=bars_df, saturation=.5,
                            kind="bar", ci=None, sharex=False, sharey=False)
     plot.axes[0][0].axhline(100, color='red', ls='--')
-    plot.axes[0][1].axhline(100, color='red', ls='--')
+    #plot.axes[0][1].axhline(100, color='red', ls='--')
     for axes in plot.axes.flat:
         axes.set_xlabel('')
         axes.set_ylabel('')
@@ -135,7 +140,7 @@ def create_plot(old_bars, updated_bars):
         trans = mtrans.Affine2D().translate(-0, 0)
         for t in axes.get_xticklabels():
             t.set_transform(t.get_transform() + trans)
-    plot.set_titles("{col_name}")
+    #plot.set_titles("{col_name}")
     plt.tight_layout()
     plt.savefig(img, format='png', transparent=True, bbox_inches='tight')
     plt.close()
@@ -143,11 +148,15 @@ def create_plot(old_bars, updated_bars):
     plot_url = base64.b64encode(img.getvalue()).decode()
     return plot_url
 
+def get_money(df):
+    return df[df['Bar'] == 'Budget'].Level[0]
+
 def game_lost(df):
     sustainability_df = df[df['Bar type'] == 'Sustainability']
-    product_df = df[df['Bar type'] == 'Product']
+    product_quality_df = df[df['Bar'] == 'Product quality']
+    budget_df = df[df['Bar'] == 'Budget']
 
-    return (sustainability_df['Level'] > 100).any() or (product_df['Level'] < 100).any()
+    return (sustainability_df['Level'] > 100).any() or (product_quality_df['Level'] < 100).any() or (budget_df['Level'] < 0).any()
 
 
 if __name__ == "__main__":

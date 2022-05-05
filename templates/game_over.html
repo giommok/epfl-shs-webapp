@@ -24,7 +24,7 @@ Escape Game
 
       <p class="pt-5"><strong>{{ message }}</strong></p>
 
-      <div style="text-align: center;"><img src="data:image/png;base64, {{ plot_url }}"></div>
+      <div style="text-align: center;"> <p class="pt-5"><strong>Budget</strong> {{ money }} <img style="width: 20px; height: 20px;" src="{{ url_for('static', filename='money.png') }}" /></p><img src="data:image/png;base64, {{ plot_url }}"></div>
 
     </div>
   </div>

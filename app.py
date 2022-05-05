@@ -106,8 +106,8 @@ def create_plot(old_bars, updated_bars):
     img = io.BytesIO()
 
     if old_bars is not None:
-        temp_updated = old_bars.copy()
-        temp_old = updated_bars.copy()
+        temp_updated = updated_bars.copy()
+        temp_old = old_bars.copy()
         temp_updated['Time'] = "Current bars"
         temp_old['Time'] = "Old bars"
         temp = temp_updated.append(temp_old, ignore_index=True)

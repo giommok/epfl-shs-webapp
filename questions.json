@@ -48,12 +48,12 @@
         ],
         "Recycling",
         [
-            "FB1",
-            "FB2",
+            "Great! You improve your social image by aligning with the “Right to Repair” movement, as well as decreasing your impact on the environment significantly. This however has the downside of being slightly more expensive and less efficient",
+            "Good answer! This costs money but avoid potentially working phones in the landfills",
             "FB3",
-            "FB4",
+            "This is the best! This will cost you a little bit, but will reduce e-waste in landfills significantly, and reduce the material procurement costs for both your company and the environment.",
             "FB5",
-            "FB6"
+            "This will not impact you financially, but your social image might take a hit since you are not acting towards a pressing environmental issue."
         ]
     ],
     [
@@ -77,14 +77,14 @@
         ],
         "Recycling",
         [
-            "FB1",
-            "FB2",
+            "The easy option. This does not address the problem and as the waste problem gets worse, it might even cost you money!",
+            "Good choice! This choice will probably cost you money in the short term, but save you money in the long term! This will also help reduce the amount of waste in landfills and ultimately reduce pollution.",
             "FB3",
             "FB4"
         ]
     ],
     [
-        "<p>There is a scientific breakthrough in battery technology which renders these new batteries much more efficient with longer lifetime, but uses materials that are impossible to recycle at the current state of the technology.</p>\n    <p>All of your competitors already switched to this new battery type.</p>\n    <p>You have thought of possible ways to manage this issue:\n    <ol>\n      <li>You follow your competitors and use this new type of battery.</li>\n      <li>You invest massively in R&D to search for battery technology that will allow it to be recyclable in the future.</li>\n      <li>You discard this technology and keep what you are using right now.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>1 and 2</li>\n             <li>2 and 3</li>\n    </ol>",
+        "<p>There is a scientific breakthrough in battery technology which renders these new batteries much more efficient with longer lifetime, but uses materials that are impossible to recycle at the current state of the technology.</p>\n    <p>All of your competitors already switched to this new battery type.</p>\n    <p>You have thought of possible ways to manage this issue:\n    <ol>\n      <li>You follow your competitors and use this new type of battery.</li>\n      <li>You invest massively in R&D to search for battery technology that will allow it to be recyclable in the future.</li>\n      <li>You discard this technology and keep what you are using right now.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>3</li>\n             <li>1 and 2</li>\n             <li>2 and 3</li>\n   </ol>",
         5,
         [
             [
@@ -95,38 +95,31 @@
                 -20
             ],
             [
-                -10,
-                -10,
-                0,
-                -10,
-                -15
-            ],
-            [
-                0,
+                  0,
                 -20,
-                0,
-                0,
-                0
+                  0,
+                  0,
+                  0
             ],
             [
                 -15,
-                0,
-                0,
-                10,
+                  0,
+                  0,
+                 10,
                 -25
             ],
             [
                 -10,
                 -15,
-                0,
+                  0,
                 -10,
                 -15
             ]
+            
         ],
         "Recycling",
         [
-            "FB",
-            "FB",
+            "Good for social image and product quality, but at the cost of not solving the problem at hand. You are very likely to loose money in the long term in this move as the recycling gets worse and worse.",
             "FB",
             "FB",
             "FB"
@@ -167,10 +160,10 @@
         ],
         "Mining",
         [
+            "This is an expensive answer. On top of that, this will increase the amount of materials you use and therefore the amont of strain you put on material mines. This could also incur an increase of child labor depening on where you source these materials",
+            "This is an expensive answer, but a step in the right direction! This R&D will improve the technology and it will become less and less expensive in the long run.",
             "FB",
-            "FB",
-            "FB",
-            "FB"
+            "Oof, not good for your image as you fall behind your competitors. This will hurt you financially and you will thus have to resort to environmentally degrading methods as they are usually cheaper than greener alternatives."
         ]
     ],
     [
@@ -194,8 +187,8 @@
         ],
         "Mining",
         [
-            "FB",
-            "FB"
+            "Did you look around for help on this choice ? This answer will result in child labor and your companys public image will be shattered if this becomes public and verifiable.",
+            "Good choice. This will cost a little bit extra, but avoid child labor in developing countries."
         ]
     ],
     [
@@ -289,7 +282,7 @@
         ]
     ],
     [
-        "<p>Newer smartphones integrate increasingly rarer materials that are very difficult to extract and cannot yet be recycled, they allow to push the limits of performances and miniaturisation. To keep your company’s smartphones interesting, what do you do?</p>\n    <p>You have various options:\n    <ol>\n      <li>Use those newer materials to keep on track with your competitors.</li>\n      <li>Invest in R&D for higher performance with known materials.</li>\n      <li>Let your competitors push on performance but optimise the interface.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>2 and 3</li>\n    </ol>",
+        "<p>Newer smartphones integrate increasingly rarer materials that are very difficult to extract and cannot yet be recycled, they allow to push the limits of performances and miniaturisation. To keep your company’s smartphones interesting, what do you do?</p>\n    <p>You have various options:\n    <ol>\n      <li>Use those newer materials to keep on track with your competitors.</li>\n      <li>Invest in R&D for higher performance with known materials.</li>\n      <li>Let your competitors push on performance but optimise the interface.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>3</li>\n             <li>2 and 3</li>\n   </ol>",
         4,
         [
             [
@@ -300,13 +293,6 @@
                 20
             ],
             [
-               -20,
-                 0,
-                 0,
-                10,
-                 0
-            ],
-            [
                 -5,
                -30,
                  0,
@@ -315,7 +301,7 @@
             ],
             [
                -25,
-               -25,
+               -10,
                  0,
                 10,
                  0
@@ -323,10 +309,10 @@
         ],
         "Pollution",
         [
-            "FB",
-            "FB",
-            "FB",
-            "FB"
+            "This is a good move for your public image, but also a step in the wrong direction for already existing global waste issues.",
+            "Decent answer! This will push you up maybe not in the most efficient way, but the most responsible way.",
+            "Decent answer! This will push you up maybe not in the most efficient way, but the most responsible way."
+           
         ]
     ],
     [
@@ -355,7 +341,7 @@
                  0
             ],
             [
-               -35,
+               -25,
                  0,
                -50,
                -20,
@@ -364,10 +350,10 @@
         ],
         "Pollution",
         [
-            "FB",
-            "FB",
-            "FB",
-            "FB"
+            "The easy option ? This will cost you money and only delay the issue. Not so good after all.",
+            "Good option, but not the best. This will cost you money and not solve the toxicity problem. It is still a first step however towards less waste.",
+            "Nice! You’re helping biodiversity and public health quite a bit with this move. However, this process can cost a lot of money in the process.",
+            "The best option when affordable! This way, you tackle the problem in two different and complementary ways. This is however not perfect, why not just switch materials ?"
         ]
     ]
 ]

@@ -20,13 +20,13 @@ Escape Game
   <div class="row">
     <div class="col-md-20 col-lg-25 mx-lg-auto mx-md-auto">
 
+      <p class="pt-5"><strong>Feedback for the previous question</strong> {{ message }}</p>
+
       <h1 class="pt-5 pb-2">Topic: {{ topic }}</h1>
 
       <p class="lead"> {{ question|safe }}</p>
 
       <div style="text-align: center;">{{ wtf.quick_form(quiz_form) }}</div>
-
-      <p class="pt-5"><strong>{{ message }}</strong></p>
 
       <div style="text-align: center;"> <p class="pt-5"><img style="width: 20px; height: 20px;" src="{{ url_for('static', filename='money.png') }}" /> <strong>Budget</strong> {{ money }} </p><img src="data:image/png;base64, {{ plot_url }}"></div>
 

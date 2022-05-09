@@ -57,7 +57,7 @@
         ]
     ],
     [
-        "<p>Today, the plastics you use for the production are made by “The Plastic Corporation”. They make a good quality product for a relatively low cost, but their plastic is made from hydrocarbons and is not easily recyclable.</p>\n    \n    <p>You have to manage how you want to get the plastics for the phones and there are a few options:\n    <ol>\n      <li>Keep you old company.</li>\n      <li>Change for “Green Plastic”, a company with similar quality but that makes plant-based plastic that can be easily recyclable.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n    </ol>",
+        "<p>Today, the plastics you use for the production are made by “The Plastic Corporation”. They make a good quality product for a relatively low cost, but their plastic is made from hydrocarbons and is not easily recyclable.</p>\n    \n    <p>You have to manage how you want to get the plastics for the phones and there are a few options:\n    <ol type = 'A'>\n      <li>Keep you old company.</li>\n      <li>Change for “Green Plastic”, a company with similar quality but that makes plant-based plastic that can be easily recyclable.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>",
         2,
         [
             [
@@ -78,9 +78,7 @@
         "Recycling",
         [
             "The easy option. This does not address the problem and as the waste problem gets worse, it might even cost you money!",
-            "Good choice! This choice will probably cost you money in the short term, but save you money in the long term! This will also help reduce the amount of waste in landfills and ultimately reduce pollution.",
-            "FB3",
-            "FB4"
+            "Good choice! This choice will probably cost you money in the short term, but save you money in the long term! This will also help reduce the amount of waste in landfills and ultimately reduce pollution."
         ]
     ],
     [
@@ -126,7 +124,7 @@
         ]
     ],
     [
-        "<p>Your competitors are designing new phones that are more powerful than your current model. Those phones require a lot of resources.</p>\n    <p>You have different options:\n    <ol>\n      <li>Increase the power of your smartphone by scaling up the number of components you use now (and so, increase the mines usage).</li>\n      <li>Increase the power of your smartphone by investing in research and using more advanced and powerful components while still using the same amount of raw materials.</li>\n      <li>Use less transistors to have lower power but longer battery.</li>\n      <li>Ignore the issue.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>4</li>\n    </ol>",
+        "<p>Your competitors are designing new phones that are more powerful than your current model. Those phones require a lot of resources.</p>\n    <p>You have different options:\n    <ol type = 'A'>\n      <li>Increase the power of your smartphone by scaling up the number of components you use now (and so, increase the mines usage).</li>\n      <li>Increase the power of your smartphone by investing in research and using more advanced and powerful components while still using the same amount of raw materials.</li>\n      <li>Use less transistors to have lower power but longer battery.</li>\n      <li>Ignore the issue.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>",
         4,
         [
             [
@@ -167,7 +165,7 @@
         ]
     ],
     [
-        "<p>For the extraction of the metals in your smartphones you are currently working with a company called: “The mining corporation”. However, in recent years you’ve heard about  another mining company called “The Miners”.</p>\n    <p>You have two options:\n    <ol>\n      <li>Keep buying resources from “The mining corporation”.</li>\n      <li>Change the reseller and buy resources from “The Miners”.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n    </ol>",
+        "<p>For the extraction of the metals in your smartphones you are currently working with a company called: “The mining corporation”. However, in recent years you’ve heard about  another mining company called “The Miners”.</p>\n    <p>You have two options:\n    <ol type = 'A'>\n      <li>Keep buying resources from “The mining corporation”.</li>\n      <li>Change the reseller and buy resources from “The Miners”.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>",
         2,
         [
             [
@@ -192,7 +190,7 @@
         ]
     ],
     [
-        "<p>The company has to split the budget of R&D to reduce the CO2 impact of the phone from mining to end of life management.</p>\n    <p>You have various option on how to split the budget for the different phases of the phone life:\n    <ol>\n      <li>70% on extraction and manufacturing, 7% on transportation, 20% on usage and 3% on end of life.</li>\n      <li>30% on extraction and manufacturing, 8% on transportation, 50% on usage and 2% on end of life.</li>\n      <li>40% on extraction and manufacturing, 10% on transportation, 40% on usage and 10% on end of life.</li>\n      <li>25% on extraction and manufacturing,10% on transportation,  25% on usage and 40% on end of life.</li>\n      <li>10% on extraction and manufacturing, 5% on transportation, 60% on usage and 25% on end of life.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>4</li>\n             <li>5</li>\n    </ol>",
+        "<p>The company has to split the budget of R&D to reduce the CO2 impact of the phone from mining to end of life management.</p>\n    <p>You have various option on how to split the budget for the different phases of the phone life:\n    <ol type = 'A'>\n      <li>70% on extraction and manufacturing, 7% on transportation, 20% on usage and 3% on end of life.</li>\n      <li>30% on extraction and manufacturing, 8% on transportation, 50% on usage and 2% on end of life.</li>\n      <li>40% on extraction and manufacturing, 10% on transportation, 40% on usage and 10% on end of life.</li>\n      <li>25% on extraction and manufacturing,10% on transportation,  25% on usage and 40% on end of life.</li>\n      <li>10% on extraction and manufacturing, 5% on transportation, 60% on usage and 25% on end of life.</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>",
         5,
         [
             [
@@ -241,7 +239,7 @@
         ]
     ],
     [
-        "<p>As you just have seen the extraction and manufacturing is responsible for the biggest impact on the environment. Your company ask again to split the budget you assigned for the R&D for the extraction and manufacturing to the different component of the smartphone.</p>\n    <p>You have various options:\n    <ol>\n      <li>10 % Integrated circuit (IC), 50% Battery, 30% Display, 10% Printed circuits (PCB).</li>\n      <li>5 % Integrated circuit (IC), 5% Battery, 80% Display, 10% Printed circuits (PCB).</li>\n      <li>5 % Integrated circuit (IC), 70% Battery, 20% Display, 5% Printed circuits (PCB).</li>\n      <li>80% Integrated circuit (IC), 5% Battery, 10% Display, 5% Printed circuits (PCB).</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>\n\n    <ol type = 'A'>\n             <li>1</li>\n             <li>2</li>\n             <li>3</li>\n             <li>4</li>\n    </ol>",
+        "<p>As you just have seen the extraction and manufacturing is responsible for the biggest impact on the environment. Your company ask again to split the budget you assigned for the R&D for the extraction and manufacturing to the different component of the smartphone.</p>\n    <p>You have various options:\n    <ol type = 'A'>\n      <li>10 % Integrated circuit (IC), 50% Battery, 30% Display, 10% Printed circuits (PCB).</li>\n      <li>5 % Integrated circuit (IC), 5% Battery, 80% Display, 10% Printed circuits (PCB).</li>\n      <li>5 % Integrated circuit (IC), 70% Battery, 20% Display, 5% Printed circuits (PCB).</li>\n      <li>80% Integrated circuit (IC), 5% Battery, 10% Display, 5% Printed circuits (PCB).</li>\n    </ol>\n    </p>\n\n    <p>What do you do?</p>",
         4,
         [
             [
@@ -350,10 +348,10 @@
         ],
         "Pollution",
         [
-            "The easy option ? This will cost you money and only delay the issue. Not so good after all.",
+            "The easy option? This will cost you money and only delay the issue. Not so good after all.",
             "Good option, but not the best. This will cost you money and not solve the toxicity problem. It is still a first step however towards less waste.",
             "Nice! You’re helping biodiversity and public health quite a bit with this move. However, this process can cost a lot of money in the process.",
-            "The best option when affordable! This way, you tackle the problem in two different and complementary ways. This is however not perfect, why not just switch materials ?"
+            "The best option when affordable! This way, you tackle the problem in two different and complementary ways. This is however not perfect, why not just switch materials?"
         ]
     ]
 ]

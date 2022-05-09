@@ -30,6 +30,7 @@ with open('bars.db') as f:
 bars_list = [[d, data[d][0], data[d][1]] for d in data]
 bars_df = pd.DataFrame(bars_list, columns=['Bar', 'Level', 'Bar type'])
 
+
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if 'username' in session:
@@ -61,6 +62,7 @@ def play():
     old_bars_df = pd.read_json(session['old_bars_df'], orient='split') if session['old_bars_df'] is not None else None
 
     message = ""
+    feedback_title = ""
 
     if request.method == 'POST':
         # Retrieve choice
@@ -72,7 +74,6 @@ def play():
         rewards = pd.Series(questions[current_question][2][choice], dtype=int)
         bars_df['Level'] = bars_df['Level'].add(rewards)
         session['bars_df'] = bars_df.copy(deep=True).to_json(orient='split')
-
 
         # Retrieve feedback for last choice
         message = questions[current_question][4][int(quiz_form.question.data)]
@@ -86,21 +87,27 @@ def play():
 
     game_over = current_question == len(questions)
 
+    if message.replace(" ", "") != "":  # If there is a feedback, set the title for the feedback section
+        feedback_title = "Feedback for the previous question"
+
     if game_over:
         if game_lost(bars_df):
-            message = "You lost the game :( !"
+            game_over_message = "You lost the game :( !"
         else:
-            message = "Congrats, you won the game!"
+            game_over_message = "Congrats, you won the game!"
         session.pop('username', None)
-        return render_template('game_over.html', message=message, plot_url=plot_url, money=money)
+        return render_template('game_over.html', feedback_title=feedback_title, message=message,
+                               game_over_message=game_over_message, plot_url=plot_url, money=money)
 
     question = questions[current_question][0]
     number_of_choices = questions[current_question][1]
     topic = questions[current_question][3]
     quiz_form.question.choices = [(i, string.ascii_uppercase[i]) for i in range(number_of_choices)]
 
-    return render_template('play.html', quiz_form=quiz_form, message=message, question=question, topic=topic,
+    return render_template('play.html', quiz_form=quiz_form, feedback_title=feedback_title, message=message,
+                           question=question, topic=topic,
                            plot_url=plot_url, money=money)
+
 
 def create_plot(old_bars, updated_bars):
     # Prepare plot
@@ -121,17 +128,17 @@ def create_plot(old_bars, updated_bars):
         pal = dict(zip(unique, sns.color_palette(n_colors=len(unique))))
         pal.update({"Total": "k"})
 
-        plot = sns.catplot(x="Bar", y="Level", hue="Time", hue_order=["Old bars", "Current bars"], #col="Bar type",
-                   data=temp, alpha=0.7, edgecolor="white",
-                   kind="bar", ci=None, palette=pal, sharex=False, sharey=False, dodge=True)
+        plot = sns.catplot(x="Bar", y="Level", hue="Time", hue_order=["Old bars", "Current bars"],  # col="Bar type",
+                           data=temp, alpha=0.7, edgecolor="white",
+                           kind="bar", ci=None, palette=pal, sharex=False, sharey=False, dodge=True)
         sns.move_legend(plot, "upper center", bbox_to_anchor=(0.5, 1.1), ncol=2, title=None, frameon=False)
 
     else:
-        plot = sns.catplot(x="Bar", y="Level", #col="Bar type",
+        plot = sns.catplot(x="Bar", y="Level",  # col="Bar type",
                            data=updated_bars, saturation=.5,
                            kind="bar", ci=None, sharex=False, sharey=False)
     plot.axes[0][0].axhline(100, color='red', ls='--')
-    #plot.axes[0][1].axhline(100, color='red', ls='--')
+    # plot.axes[0][1].axhline(100, color='red', ls='--')
     for axes in plot.axes.flat:
         axes.set_xlabel('')
         axes.set_ylabel('')
@@ -140,7 +147,7 @@ def create_plot(old_bars, updated_bars):
         trans = mtrans.Affine2D().translate(-0, 0)
         for t in axes.get_xticklabels():
             t.set_transform(t.get_transform() + trans)
-    #plot.set_titles("{col_name}")
+    # plot.set_titles("{col_name}")
     plt.tight_layout()
     plt.savefig(img, format='png', transparent=True, bbox_inches='tight')
     plt.close()
@@ -148,15 +155,18 @@ def create_plot(old_bars, updated_bars):
     plot_url = base64.b64encode(img.getvalue()).decode()
     return plot_url
 
+
 def get_money(df):
     return df[df['Bar'] == 'Budget'].Level[0]
+
 
 def game_lost(df):
     sustainability_df = df[df['Bar type'] == 'Sustainability']
     product_quality_df = df[df['Bar'] == 'Product quality']
     budget_df = df[df['Bar'] == 'Budget']
 
-    return (sustainability_df['Level'] > 100).any() or (product_quality_df['Level'] < 100).any() or (budget_df['Level'] < 0).any()
+    return (sustainability_df['Level'] > 100).any() or (product_quality_df['Level'] < 100).any() or (
+                budget_df['Level'] < 0).any()
 
 
 if __name__ == "__main__":

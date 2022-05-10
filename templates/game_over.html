@@ -20,11 +20,9 @@ Escape Game
   <div class="row">
     <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
 
-      <h1 class="pt-5 pb-2">GAME OVER</h1>
+      <h1 class="pt-5 pb-2">{{ game_over_message }}</h1>
 
       <p class="pt-5"><strong>{{ feedback_title }}</strong> {{ message }}</p>
-
-      <p class="pt-5"><strong>{{ game_over_message }}</strong></p>
 
       <div style="text-align: center;"> <p class="pt-5"><strong>Budget</strong> {{ money }} <img style="width: 20px; height: 20px;" src="{{ url_for('static', filename='money.png') }}" /></p><img src="data:image/png;base64, {{ plot_url }}"></div>
 

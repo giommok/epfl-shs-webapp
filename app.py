@@ -10,12 +10,17 @@ import seaborn as sns
 from flask import Flask, request, render_template, session, redirect, url_for
 from flask_bootstrap import Bootstrap
 
-from forms import QuizForm, NameForm
+from forms import QuizForm, NameForm, PuzzleForm
 
 app = Flask(__name__)
 Bootstrap(app)
 # Set the secret key to some random bytes. Keep this really secret!
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
+# Open puzzles file
+with open('puzzles.json', encoding="utf8") as f:
+    original_puzzles = json.load(f)
+    f.close()
 
 # Open questions file
 with open('questions.json', encoding="utf8") as f:
@@ -46,6 +51,9 @@ def login():
         # Initialize bars
         session['bars_df'] = bars_df.copy(deep=True).to_json(orient='split')
         session['old_bars_df'] = None
+
+        # Initialize puzzles
+        session['puzzles'] = original_puzzles
 
         return redirect(url_for('play'))
     return render_template('index.html', name_form=name_form)
@@ -109,6 +117,43 @@ def play():
                            plot_url=plot_url, money=money)
 
 
+@app.route('/claim_puzzle', methods=['GET', 'POST'])
+def claim_puzzle():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+
+    puzzle_form = PuzzleForm()
+    puzzles = session['puzzles']
+    bars_df = pd.read_json(session['bars_df'], orient='split')
+    old_bars_df = pd.read_json(session['old_bars_df'], orient='split') if session['old_bars_df'] is not None else None
+
+    message = ""
+
+    if request.method == 'POST':
+        # Retrieve choice
+        password = puzzle_form.password.data
+
+        if password in puzzles:
+            # Update bars
+            session['old_bars_df'] = bars_df.copy(deep=True).to_json(orient='split')
+            old_bars_df = bars_df.copy(deep=True)
+            # Remove puzzle from session puzzles
+            rewards = pd.Series(session['puzzles'].pop(password), dtype=int)
+            bars_df['Level'] = bars_df['Level'].add(rewards)
+            session['bars_df'] = bars_df.copy(deep=True).to_json(orient='split')
+
+            # Retrieve feedback for last puzzle claim
+            message = "Rewards claimed! Well done!"
+        else:
+            message = "Wrong password. Make sure the password is correct if you successfully completed a puzzle."
+
+    plot_url = create_plot(old_bars_df, bars_df)
+    money = get_money(bars_df)
+
+    return render_template('claim_puzzle.html', puzzle_form=puzzle_form, message=message,
+                           plot_url=plot_url, money=money)
+
+
 def create_plot(old_bars, updated_bars):
     # Prepare plot
     img = io.BytesIO()
@@ -166,7 +211,7 @@ def game_lost(df):
     budget_df = df[df['Bar'] == 'Budget']
 
     return (sustainability_df['Level'] > 100).any() or (product_quality_df['Level'] < 100).any() or (
-                budget_df['Level'] < 0).any()
+            budget_df['Level'] < 0).any()
 
 
 if __name__ == "__main__":

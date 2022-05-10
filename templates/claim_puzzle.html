@@ -1,0 +1,35 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Escape Game
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-20 col-lg-25 mx-lg-auto mx-md-auto">
+
+      <p class="pt-5"><strong>{{ sersfe }}</strong> {{ message }}</p>
+
+      <h1 class="pt-5 pb-2">Claim the rewards for a puzzle</h1>
+
+      <div style="text-align: center;">{{ wtf.quick_form(puzzle_form) }}</div>
+
+      <div style="text-align: center;"> <p class="pt-5"><img style="width: 20px; height: 20px;" src="{{ url_for('static', filename='money.png') }}" /> <strong>Budget</strong> {{ money }} </p><img src="data:image/png;base64, {{ plot_url }}"></div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import RadioField, SubmitField, StringField, validators
+from wtforms import RadioField, SubmitField, StringField, validators, PasswordField
+
 
 class FieldsRequiredForm(FlaskForm):
     """Require all fields to have content. This works around the bug that WTForms radio
@@ -11,6 +12,7 @@ class FieldsRequiredForm(FlaskForm):
             render_kw.setdefault('required', True)
             return super().render_field(field, render_kw)
 
+
 class QuizForm(FieldsRequiredForm):
     question = RadioField('choice', [validators.DataRequired()])
     submit = SubmitField('Submit')
@@ -19,3 +21,8 @@ class QuizForm(FieldsRequiredForm):
 class NameForm(FlaskForm):
     name = StringField('Team name', validators=[validators.DataRequired()])
     submit = SubmitField('Play')
+
+
+class PuzzleForm(FlaskForm):
+    password = PasswordField('Puzzle password', validators=[validators.DataRequired()])
+    submit = SubmitField('Claim puzzle')

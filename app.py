@@ -73,6 +73,8 @@ def play():
     if request.method == 'POST':
         # Retrieve choice
         choice = int(quiz_form.question.data)
+        print("CHOICE = ", choice)
+        print("QUESTION = ", current_question)
         session['last_choice'] = choice
 
         # Update bars
@@ -127,7 +129,7 @@ def feedback():
     continue_form = ContinueForm()
     previous_question = session['question_number'] - 1
     bars_df = pd.read_json(session['bars_df'], orient='split')
-    old_bars_df = pd.read_json(session['old_bars_df'], orient='split') if session['old_bars_df'] is not None else None
+    old_bars_df = pd.read_json(session['old_bars_df'], orient='split')
 
     if request.method == 'POST':
         return redirect(url_for('play'))

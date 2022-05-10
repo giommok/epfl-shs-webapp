@@ -50,9 +50,9 @@
         [
             "Great! You improve your social image by aligning with the “Right to Repair” movement, as well as decreasing your impact on the environment significantly. This however has the downside of being slightly more expensive and less efficient",
             "Good answer! This costs money but avoid potentially working phones in the landfills",
-            "FB3",
+            "TODO",
             "This is the best! This will cost you a little bit, but will reduce e-waste in landfills significantly, and reduce the material procurement costs for both your company and the environment.",
-            "FB5",
+            "TODO",
             "This will not impact you financially, but your social image might take a hit since you are not acting towards a pressing environmental issue."
         ]
     ],
@@ -118,9 +118,9 @@
         "Recycling",
         [
             "Good for social image and product quality, but at the cost of not solving the problem at hand. You are very likely to loose money in the long term in this move as the recycling gets worse and worse.",
-            " ",
-            " ",
-            " "
+            "TODO",
+            "TODO",
+            "TODO"
         ]
     ],
     [
@@ -160,7 +160,7 @@
         [
             "This is an expensive answer. On top of that, this will increase the amount of materials you use and therefore the amont of strain you put on material mines. This could also incur an increase of child labor depening on where you source these materials",
             "This is an expensive answer, but a step in the right direction! This R&D will improve the technology and it will become less and less expensive in the long run.",
-            " ",
+            "TODO",
             "Oof, not good for your image as you fall behind your competitors. This will hurt you financially and you will thus have to resort to environmentally degrading methods as they are usually cheaper than greener alternatives."
         ]
     ],
@@ -231,11 +231,11 @@
         ],
         "Pollution",
         [
-            " ",
-            " ",
-            " ",
-            " ",
-            " "
+            "TODO",
+            "TODO",
+            "TODO",
+            "TODO",
+            "TODO"
         ]
     ],
     [
@@ -273,10 +273,10 @@
         ],
         "Pollution",
         [
-            " ",
-            " ",
-            " ",
-            " "
+            "TODO",
+            "TODO",
+            "TODO",
+            "TODO"
         ]
     ],
     [

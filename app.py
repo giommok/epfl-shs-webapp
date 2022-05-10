@@ -10,7 +10,7 @@ import seaborn as sns
 from flask import Flask, request, render_template, session, redirect, url_for
 from flask_bootstrap import Bootstrap
 
-from forms import QuizForm, NameForm, PuzzleForm
+from forms import QuizForm, NameForm, PuzzleForm, ContinueForm
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -69,12 +69,11 @@ def play():
     bars_df = pd.read_json(session['bars_df'], orient='split')
     old_bars_df = pd.read_json(session['old_bars_df'], orient='split') if session['old_bars_df'] is not None else None
 
-    message = ""
-    feedback_title = ""
 
     if request.method == 'POST':
         # Retrieve choice
         choice = int(quiz_form.question.data)
+        session['last_choice'] = choice
 
         # Update bars
         session['old_bars_df'] = bars_df.copy(deep=True).to_json(orient='split')
@@ -90,13 +89,13 @@ def play():
         session['question_number'] += 1
         current_question += 1
 
+        if message.replace(" ", "") != "":  # If there is a feedback, show the feedback page
+            return redirect(url_for('feedback'))
+
     plot_url = create_plot(old_bars_df, bars_df)
     money = get_money(bars_df)
 
     game_over = current_question == len(questions)
-
-    if message.replace(" ", "") != "":  # If there is a feedback, set the title for the feedback section
-        feedback_title = "Feedback for the previous question"
 
     if game_over:
         if game_lost(bars_df):
@@ -104,7 +103,7 @@ def play():
         else:
             game_over_message = "Congrats, you won the game!"
         session.pop('username', None)
-        return render_template('game_over.html', feedback_title=feedback_title, message=message,
+        return render_template('game_over.html',
                                game_over_message=game_over_message, plot_url=plot_url, money=money)
 
     question = questions[current_question][0]
@@ -112,7 +111,34 @@ def play():
     topic = questions[current_question][3]
     quiz_form.question.choices = [(i, string.ascii_uppercase[i]) for i in range(number_of_choices)]
 
-    return render_template('play.html', quiz_form=quiz_form, feedback_title=feedback_title, message=message,
+    return render_template('play.html', quiz_form=quiz_form,
+                           question=question, topic=topic,
+                           plot_url=plot_url, money=money)
+
+
+@app.route('/feedback', methods=['GET', 'POST'])
+def feedback():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+
+    if session['question_number'] == 0:
+        return redirect(url_for('play'))
+
+    continue_form = ContinueForm()
+    previous_question = session['question_number'] - 1
+    bars_df = pd.read_json(session['bars_df'], orient='split')
+    old_bars_df = pd.read_json(session['old_bars_df'], orient='split') if session['old_bars_df'] is not None else None
+
+    if request.method == 'POST':
+        return redirect(url_for('play'))
+
+    plot_url = create_plot(old_bars_df, bars_df)
+    money = get_money(bars_df)
+    question = questions[previous_question][0]
+    topic = questions[previous_question][3]
+    message = questions[previous_question][4][session['last_choice']]
+
+    return render_template('feedback.html', continue_form=continue_form, message=message,
                            question=question, topic=topic,
                            plot_url=plot_url, money=money)
 

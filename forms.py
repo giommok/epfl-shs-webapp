@@ -26,3 +26,6 @@ class NameForm(FlaskForm):
 class PuzzleForm(FlaskForm):
     password = PasswordField('Puzzle password', validators=[validators.DataRequired()])
     submit = SubmitField('Claim puzzle')
+
+class ContinueForm(FlaskForm):
+    submit = SubmitField('Continue')

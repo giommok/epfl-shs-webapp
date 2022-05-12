@@ -232,10 +232,10 @@
         "Pollution",
         [
             "Good job! Material extraction has the biggest impact and should thus be researched more to diminish its impact.",
-            "Wrong answer, material extraction has the biggest impact and should thus be researched more to diminish its impact.",
-            "Wrong answer, material extraction has the biggest impact and should thus be researched more to diminish its impact.",
-            "Wrong answer, material extraction has the biggest impact and should thus be researched more to diminish its impact.",
-            "Wrong answer, material extraction has the biggest impact and should thus be researched more to diminish its impact."
+            "Not the optimal answer, although usage might appear as the biggest producer of CO2 with the energy produced by gas/coal power plants, material extraction has the biggest impact and should thus be researched more to diminish its impact.",
+            "Not the optimal answer, material extraction has the biggest impact and should thus be researched more to diminish its impact. It’s impact is even higher than the usage.",
+            "Not the optimal answer, although the transportation via planes, boats and trains might seem a very big part of the  CO2, material extraction has the biggest impact and should thus be researched more to diminish its impact.",
+            "Not the optimal answer, although usage might appear as the biggest producer of CO2 with the energy produced by gas/coal power plants, material extraction has the biggest impact and should thus be researched more to diminish its impact."
         ]
     ],
     [
@@ -273,9 +273,9 @@
         ],
         "Pollution",
         [
-            "Wrong answer, ICs have way more impact and should thus be researched more to diminish their impact.",
-            "Wrong answer, ICs have way more impact and should thus be researched more to diminish their impact.",
-            "Wrong answer, ICs have way more impact and should thus be researched more to diminish their impact.",
+            "Not the optimal  answer, ICs have way more impact and should thus be researched more to diminish their impact. You might have a look at the second graph.",
+            "Not the optimal answer, ICs have way more impact and should thus be researched more to diminish their impact. We agree that the display has also a big impact but you may want to compare the scale of the two graphs to see why IC has really a bigger impact.",
+            "Not the optimal answer, ICs have way more impact and should thus be researched more to diminish their impact. We agree that it’s counterintuitive since the battery is well known for its bad effects on the environment. You might want to compare the two graphs to have a better idea.",
             "Good job! ICs have the biggest impact and should thus be researched most."
         ]
     ],

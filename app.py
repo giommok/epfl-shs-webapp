@@ -74,8 +74,6 @@ def play():
     if request.method == 'POST':
         # Retrieve choice
         choice = int(quiz_form.question.data)
-        print("CHOICE = ", choice)
-        print("QUESTION = ", current_question)
         session['last_choice'] = choice
 
         # Update bars

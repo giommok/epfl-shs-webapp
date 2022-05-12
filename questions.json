@@ -50,9 +50,9 @@
         [
             "Great! You improve your social image by aligning with the “Right to Repair” movement, as well as decreasing your impact on the environment significantly. This however has the downside of being slightly more expensive and less efficient",
             "Good answer! This costs money but avoid potentially working phones in the landfills",
-            "TODO",
+            "This will cost you money to replace, which can lead to a price increase of your product on the market, which customers won’t appreciate. You also don’t fix the problem at hand, not great.",
             "This is the best! This will cost you a little bit, but will reduce e-waste in landfills significantly, and reduce the material procurement costs for both your company and the environment.",
-            "TODO",
+            "This is good, but not perfect! Designing the phones so that they can be repaired is good for the environment as they will last longer, replacing the phones for free is a risk to take, but if your company is willing to make repairs instead of trashing the phones it would be a great thing! This would allow you to sell them back refurbished and get your money back on the free phone change.",
             "This will not impact you financially, but your social image might take a hit since you are not acting towards a pressing environmental issue."
         ]
     ],
@@ -118,9 +118,9 @@
         "Recycling",
         [
             "Good for social image and product quality, but at the cost of not solving the problem at hand. You are very likely to loose money in the long term in this move as the recycling gets worse and worse.",
-            "TODO",
-            "TODO",
-            "TODO"
+            "The safe option, this does not cost any money but might put your product quality in jeopardy.",
+            "This costs money, but for the good cause! This will help your company in the long run as you develop the technology, it will become cheaper and cheaper to manufacture and use. With this choice, you will impact the environment for the time being, but your product quality is maintained as you follow your competitors.",
+            "This costs money, but for the good cause. This choice will help your company in the long run as you develop the technology, it will become cheaper and cheaper to manufacture and use. You also don’t impact the environment at all during this R&D phase, but you fall behind your competitors and thus your product quality decreases."
         ]
     ],
     [
@@ -160,7 +160,7 @@
         [
             "This is an expensive answer. On top of that, this will increase the amount of materials you use and therefore the amont of strain you put on material mines. This could also incur an increase of child labor depening on where you source these materials",
             "This is an expensive answer, but a step in the right direction! This R&D will improve the technology and it will become less and less expensive in the long run.",
-            "TODO",
+            "This is very good for the mining and material gathering problem as you relieve them a little bit. The longer battery life on your phone is also sure to please your customers!",
             "Oof, not good for your image as you fall behind your competitors. This will hurt you financially and you will thus have to resort to environmentally degrading methods as they are usually cheaper than greener alternatives."
         ]
     ],
@@ -309,7 +309,7 @@
         [
             "This is a good move for your public image, but also a step in the wrong direction for already existing global waste issues.",
             "Decent answer! This will push you up maybe not in the most efficient way, but the most responsible way.",
-            "Decent answer! This will push you up maybe not in the most efficient way, but the most responsible way."
+            "This is a great option for the long term, but it will cost money for a little while until these new manufacturing processes become cheaper and cheaper. Letting your competitors get ahead will hurt your product quality though. The positive is that you don’t hurt the environment in any way, and actually improve it in the longer term!"
            
         ]
     ],

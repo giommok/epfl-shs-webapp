@@ -25,11 +25,11 @@ TEXT = """<p>Nowadays, when a phone is broken it is completely replaced by the c
              <li>4</li>
     </ol>"""
 
-with open('questions.json', encoding="utf8") as f:
+with open('../questions.json', encoding="utf8") as f:
     old_questions = json.load(f)
     f.close()
 
-with open('questions.json', 'w', encoding='utf-8') as f:
+with open('../questions.json', 'w', encoding='utf-8') as f:
 
     question = """<p>Newer smartphones integrate increasingly rarer materials that are very difficult to extract and cannot yet be recycled, they allow to push the limits of performances and miniaturisation. To keep your company’s smartphones interesting, what do you do?</p>
     <p>You have various options:

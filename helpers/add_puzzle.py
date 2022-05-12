@@ -5,13 +5,13 @@ import json
 # in the same order as in the file bars.db)
 
 try:
-    with open('puzzles.json', encoding="utf8") as f:
+    with open('../puzzles.json', encoding="utf8") as f:
         old_puzzles = json.load(f)
         f.close()
 except:
     old_puzzles = dict()
 
-with open('puzzles.json', 'w', encoding='utf-8') as f:
+with open('../puzzles.json', 'w', encoding='utf-8') as f:
     # Password that players have to submit to claim the puzzle
     # IMPORTANT: all puzzles must have different passwords!
     puzzle_password = 'examplePuzzlePassword'

@@ -36,6 +36,7 @@ bars_list = [[d, data[d][0], data[d][1]] for d in data]
 bars_df = pd.DataFrame(bars_list, columns=['Bar', 'Level', 'Bar type'])
 
 
+# Login function
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if 'username' in session:
@@ -59,6 +60,7 @@ def login():
     return render_template('index.html', name_form=name_form)
 
 
+# Choose answer function
 @app.route('/play', methods=['GET', 'POST'])
 def play():
     if 'username' not in session:
@@ -68,7 +70,6 @@ def play():
     current_question = session['question_number']
     bars_df = pd.read_json(session['bars_df'], orient='split')
     old_bars_df = pd.read_json(session['old_bars_df'], orient='split') if session['old_bars_df'] is not None else None
-
 
     if request.method == 'POST':
         # Retrieve choice
@@ -118,6 +119,7 @@ def play():
                            plot_url=plot_url, money=money)
 
 
+# Show feedback function
 @app.route('/feedback', methods=['GET', 'POST'])
 def feedback():
     if 'username' not in session:
@@ -145,6 +147,7 @@ def feedback():
                            plot_url=plot_url, money=money)
 
 
+# Claim puzzle function
 @app.route('/claim_puzzle', methods=['GET', 'POST'])
 def claim_puzzle():
     if 'username' not in session:
@@ -182,6 +185,7 @@ def claim_puzzle():
                            plot_url=plot_url, money=money)
 
 
+# Helper function to create plots
 def create_plot(old_bars, updated_bars):
     # Prepare plot
     img = io.BytesIO()
@@ -229,10 +233,12 @@ def create_plot(old_bars, updated_bars):
     return plot_url
 
 
+# Helper function to get money
 def get_money(df):
     return df[df['Bar'] == 'Budget'].Level[0]
 
 
+# Helper function to check if the game is lost
 def game_lost(df):
     sustainability_df = df[df['Bar type'] == 'Sustainability']
     product_quality_df = df[df['Bar'] == 'Product quality']
@@ -242,5 +248,6 @@ def game_lost(df):
             budget_df['Level'] < 0).any()
 
 
+# Function to start the webapp
 if __name__ == "__main__":
     app.run(debug=True)

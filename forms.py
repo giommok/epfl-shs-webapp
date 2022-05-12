@@ -13,19 +13,24 @@ class FieldsRequiredForm(FlaskForm):
             return super().render_field(field, render_kw)
 
 
+# Form for choices
 class QuizForm(FieldsRequiredForm):
     question = RadioField('choice', [validators.DataRequired()])
     submit = SubmitField('Submit')
 
 
-class NameForm(FlaskForm):
+# Form for login
+class NameForm(FieldsRequiredForm):
     name = StringField('Team name', validators=[validators.DataRequired()])
     submit = SubmitField('Play')
 
 
-class PuzzleForm(FlaskForm):
+# Form for claiming puzzles rewards
+class PuzzleForm(FieldsRequiredForm):
     password = PasswordField('Puzzle password', validators=[validators.DataRequired()])
     submit = SubmitField('Claim puzzle')
 
+
+# Form for continuing after feedback
 class ContinueForm(FlaskForm):
     submit = SubmitField('Continue')

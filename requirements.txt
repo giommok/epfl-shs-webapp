@@ -3,13 +3,13 @@ Flask==1.0.2
 
 # Flask Packages
 Flask-WTF==0.14.2
-
 flask-bootstrap
 
+# Other packages
 matplotlib
 pandas
 seaborn
 
+# Heroku packages
 werkzeug==0.16.1
-
 uwsgi
